@@ -9,7 +9,7 @@ def MSTsearch():
 
     st.title('MSTsearch')
 
-    st.text('隣接行列のcsvを使って、全域最小木の探索ができます')
+    st.text('隣接行列のcsvを使って、最小全域木の探索ができます')
 
     graph = st.file_uploader('csvを入力')
 
@@ -17,7 +17,7 @@ def MSTsearch():
  
             
         st.divider()
-        G = pd.read_csv(graph,header=None)
+        G = pd.read_csv(graph,header=None,keep_default_na=False)
         
         MST,operation = callp.callprim(G)
         
